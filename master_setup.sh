@@ -12,7 +12,7 @@ pssh () {
 }
 
 oecho "Install packages on master, will prompt for local sudo pass"
-sudo apt-get install -q -y pssh sshpass docker.io nfs-kernel-server
+sudo apt-get install -q -y pssh sshpass docker.io nfs-kernel-server screen
 sudo usermod -a -G docker `whoami`
 
 pwd=`pwd`
