@@ -19,7 +19,7 @@ oecho "Installing packages on slaves"
 pssh "apt-get -q update"
 pssh "apt-get -qy upgrade"
 pssh "apt-get -qy install docker.io nfs-common"
-pssh "mkdir purepoc"
-pssh "mount $my_ip:/purepoc purepoc"
+pssh "mkdir -p /purepoc"
+pssh "mount $my_ip:/purepoc /purepoc"
 
 

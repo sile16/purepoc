@@ -16,9 +16,12 @@ sudo apt-get install -q -y pssh sshpass docker.io nfs-kernel-server
 sudo usermod -a -G docker `whoami`
 
 pwd=`pwd`
-sudo ln -s $pwd /purepoc
-echo "/purepoc   0.0.0.0/0(rw,no_subtree_check,no_root_squash)" > exports
+sudo mkdir -p /purepoc
+sudo mount --bind $pwd /purepoc
+
+echo "/purepoc   *(rw,no_subtree_check,no_root_squash)" > exports
 sudo cp -f exports /etc/exports
-sudo systemctl restart nfs-kernel-server
+sudo systemctl stop nfs-kernel-server
+sudo systemctl start nfs-kernel-server
 
 oecho "Please logout and log back in for docker group to become effective."
