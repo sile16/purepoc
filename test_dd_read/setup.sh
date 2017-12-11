@@ -2,7 +2,7 @@
 
 
 #pass the server
-cd /purepoc/test_dd
+cd /purepoc/test_dd_read
 server=`cat server`
 
 umount /mnt/test_fs
