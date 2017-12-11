@@ -2,9 +2,10 @@
 
 
 #pass the server
-
+cd /purepoc/test_dd
 server=`cat server`
 
-mkdir -p /mnt/test_dd
-mount $1 /mnt/test_dd"
+umount /mnt/test_fs
+mkdir -p  /mnt/test_fs
+mount $server /mnt/test_fs
 

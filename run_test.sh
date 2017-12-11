@@ -16,6 +16,8 @@ if [ "$rc" -ne "0" ]; then
 	exit 1;
 fi
 
+pssh /purepoc/$1/setup.sh
 pssh /purepoc/$1/run.sh
+
 
 
