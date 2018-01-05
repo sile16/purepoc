@@ -18,14 +18,14 @@ download () {
   ### downloading salt bootstrap
   success=0
   if [ $curl_rt -eq 0 ]; then
-    curl -o bootstrap-salt.sh -L https://bootstrap.saltstack.com 2>/dev/null
+    curl -o /tmp/bootstrap-salt.sh -L https://bootstrap.saltstack.com 2>/dev/null
     if [ $? -eq 0 ]; then
       success=1
     fi
   fi
 
   if [ ! $success ] && [ $wget_rt -eq 0 ] ; then
-    wget -O bootstrap-salt.sh https://bootstrap.saltstack.com
+    wget -O /tmp/bootstrap-salt.sh https://bootstrap.saltstack.com
     if [ $? -eq 0 ]; then
       success=1
     fi

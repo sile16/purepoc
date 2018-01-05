@@ -6,9 +6,9 @@ oecho "Downloading bootstrap"
 download
 oecho "Installing salt master"
 
-#-M install master, -L install cloud 
+#-M install master, -L install cloud
 #-X don't start daemons
-sudo sh bootstrap-salt.sh -M -X -L
+sudo sh /tmp/bootstrap-salt.sh -M -X -L
 
 oecho "linking to /purepoc"
 if [ ! -L "/purepoc" ]; then
@@ -36,5 +36,5 @@ sudo service salt-minion start
 
 
 #old docker way:
-#docker run --privileged -h purepoc --rm -v /purepoc:/purepoc -p 4505:4505 -p 4506:4506 -t purepoc
+#docker run --privileged -h purepoc --rm -v /purepoc:/purepoc -p 4505:4505 -p 4506:4506 -it purepoc
 #curl -L https://bootstrap.saltstack.com | sudo sh -s -- -A 127.0.0.1 -i master
