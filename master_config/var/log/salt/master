@@ -1,0 +1,7 @@
+2018-01-04 23:06:26,169 [salt.utils.parsers                       ][WARNING ][17] Master received a SIGTERM. Exiting.
+2018-01-04 23:16:23,359 [salt.utils.parsers                       ][WARNING ][517] Master received a SIGTERM. Exiting.
+2018-01-04 23:17:06,459 [salt.utils.verify][WARNING ][960] Insecure logging configuration detected! Sensitive data may be logged.
+2018-01-04 23:19:54,480 [salt.utils.parsers][WARNING ][960] Master received a SIGINT. Exiting.
+2018-01-05 15:46:00,642 [salt.utils.parsers][WARNING ][3487] Master received a SIGTERM. Exiting.
+2018-01-05 16:20:39,251 [salt.utils.parsers][WARNING ][916] Master received a SIGTERM. Exiting.
+2018-01-05 16:32:41,631 [salt.utils.parsers][WARNING ][8901] Master received a SIGTERM. Exiting.

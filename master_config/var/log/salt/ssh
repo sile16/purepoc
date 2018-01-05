@@ -1,0 +1,48 @@
+2018-01-05 04:55:08,163 [salt.utils.process][ERROR   ][4848] An un-handled exception from the multiprocessing process 'MultiprocessingProcess-2' was caught:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/salt/utils/process.py", line 647, in _run
+    return self._original_run()
+  File "/usr/lib/python2.7/multiprocessing/process.py", line 114, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python2.7/dist-packages/salt/client/ssh/__init__.py", line 416, in handle_routine
+    **target)
+TypeError: __init__() takes at least 5 arguments (17 given)
+2018-01-05 04:55:08,265 [salt.client.ssh  ][ERROR   ][4834] Target 'roster_defaults' did not return any data, probably due to an error.
+2018-01-05 04:55:08,268 [salt.log.setup   ][ERROR   ][4834] An un-handled exception was caught by salt's global exception handler:
+TypeError: __init__() takes at least 5 arguments (16 given)
+Traceback (most recent call last):
+  File "/usr/bin/salt-ssh", line 10, in <module>
+    salt_ssh()
+  File "/usr/lib/python2.7/dist-packages/salt/scripts.py", line 404, in salt_ssh
+    client.run()
+  File "/usr/lib/python2.7/dist-packages/salt/cli/ssh.py", line 21, in run
+    ssh.run()
+  File "/usr/lib/python2.7/dist-packages/salt/client/ssh/__init__.py", line 633, in run
+    ret = self.key_deploy(host, ret)
+  File "/usr/lib/python2.7/dist-packages/salt/client/ssh/__init__.py", line 342, in key_deploy
+    self._key_deploy_run(host, target, False)
+  File "/usr/lib/python2.7/dist-packages/salt/client/ssh/__init__.py", line 375, in _key_deploy_run
+    **target)
+TypeError: __init__() takes at least 5 arguments (16 given)
+2018-01-05 05:12:59,430 [salt.log.setup   ][ERROR   ][5643] An un-handled exception was caught by salt's global exception handler:
+TerminalException: You need to pass at least one of "args", "executable" 
+Traceback (most recent call last):
+  File "/usr/bin/salt-ssh", line 10, in <module>
+    salt_ssh()
+  File "/usr/lib/python2.7/dist-packages/salt/scripts.py", line 404, in salt_ssh
+    client.run()
+  File "/usr/lib/python2.7/dist-packages/salt/cli/ssh.py", line 21, in run
+    ssh.run()
+  File "/usr/lib/python2.7/dist-packages/salt/client/ssh/__init__.py", line 633, in run
+    ret = self.key_deploy(host, ret)
+  File "/usr/lib/python2.7/dist-packages/salt/client/ssh/__init__.py", line 355, in key_deploy
+    return self._key_deploy_run(host, target, True)
+  File "/usr/lib/python2.7/dist-packages/salt/client/ssh/__init__.py", line 378, in _key_deploy_run
+    stdout, stderr, retcode = single.shell.copy_id()
+  File "/usr/lib/python2.7/dist-packages/salt/client/ssh/shell.py", line 209, in copy_id
+    stdout, stderr, retcode = self._run_cmd(self._copy_id_str_old())
+  File "/usr/lib/python2.7/dist-packages/salt/client/ssh/shell.py", line 352, in _run_cmd
+    stream_stderr=False)
+  File "/usr/lib/python2.7/dist-packages/salt/utils/vt.py", line 124, in __init__
+    'You need to pass at least one of "args", "executable" '
+TerminalException: You need to pass at least one of "args", "executable"

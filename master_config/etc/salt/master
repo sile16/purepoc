@@ -1,0 +1,46 @@
+##### Primary configuration settings #####
+##########################################
+# This configuration file is used to manage the behavior of the Salt Master.
+# Values that are commented out but have an empty line after the comment are
+# defaults that do not need to be set in the config. If there is no blank line
+# after the comment then the value is presented as an example and is not the
+# default.
+
+# The root directory prepended to these options: pki_dir, cachedir,
+# sock_dir, log_file, autosign_file, autoreject_file, extension_modules,
+# key_logfile, pidfile:
+
+# PurePOC /etc/salt is a symbolic link that points to /purepoc/etc/salt
+root_dir: /purepoc/master_config
+
+
+
+# Enable "open mode", this mode still maintains encryption, but turns off
+# authentication, this is only intended for highly secure environments or for
+# the situation where your keys end up in a bad state. If you run in open mode
+# you do so at your own risk!
+open_mode: True
+
+# Enable auto_accept, this setting will automatically accept all incoming
+# public keys from the minions. Note that this is insecure.
+auto_accept: True
+
+
+
+
+
+
+#####         Node Groups           ######
+##########################################
+# Node groups allow for logical groupings of minion nodes. A group consists of
+# a group name and a compound target. Nodgroups can reference other nodegroups
+# with 'N@' classifier. Ensure that you do not have circular references.
+#
+#nodegroups:
+#  group1: 'L@foo.domain.com,bar.domain.com,baz.domain.com or bl*.domain.com'
+#  group2: 'G@os:Debian and foo.domain.com'
+#  group3: 'G@os:Debian and N@group1'
+#  group4:
+#    - 'G@foo:bar'
+#    - 'or'
+#    - 'G@foo:baz'

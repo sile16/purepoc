@@ -1,0 +1,6 @@
+2018-01-04 23:16:30,671 [salt.utils.parsers                                   ][WARNING ][112] Minion received a SIGTERM. Exiting.
+2018-01-05 15:42:05,696 [salt.utils.verify][WARNING ][4953] Insecure logging configuration detected! Sensitive data may be logged.
+2018-01-05 15:43:21,376 [salt.utils.parsers][WARNING ][4953] Minion received a SIGINT. Exiting.
+2018-01-05 16:20:30,987 [salt.utils.parsers][WARNING ][1785] Minion received a SIGTERM. Exiting.
+2018-01-05 16:31:42,567 [salt.utils.parsers][WARNING ][9178] Minion received a SIGTERM. Exiting.
+2018-01-05 16:32:57,177 [salt.utils.parsers][WARNING ][14776] Minion received a SIGTERM. Exiting.
