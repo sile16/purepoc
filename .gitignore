@@ -1,0 +1,3 @@
+master_config/var/log/*
+master_config/etc/salt/pki/*
+

@@ -2,13 +2,13 @@
 
 . `pwd`/bash_common.sh
 
-oecho "Downloading bootstrap"
+
 download
 oecho "Installing salt master"
 
 #-M install master, -L install cloud
-#-X don't start daemons
-sudo sh /tmp/bootstrap-salt.sh -M -X -L
+#-X don't start daemons -P allows Pip , -I insecure network connection
+sudo sh /tmp/bootstrap-salt.sh -M -X -L -P -I
 
 oecho "linking to /purepoc"
 if [ ! -L "/purepoc" ]; then
@@ -33,6 +33,7 @@ fi
 oecho "Starting Salt Deamons"
 sudo service salt-master start
 sudo service salt-minion start
+oecho "You can now run salt commands as root"
 
 
 #old docker way:

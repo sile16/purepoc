@@ -7,6 +7,7 @@ oecho () {
 }
 
 download () {
+  oecho "Downloading bootstrap"
   curl_rt=`which curl > /dev/null; echo $?`
   wget_rt=`which wget > /dev/null; echo $?`
 
@@ -21,17 +22,18 @@ download () {
     curl -o /tmp/bootstrap-salt.sh -L https://bootstrap.saltstack.com 2>/dev/null
     if [ $? -eq 0 ]; then
       success=1
+      oech "Curl Downloaded"
     fi
   fi
 
-  if [ ! $success ] && [ $wget_rt -eq 0 ] ; then
+  if [ $success -eq 0 ] && [ $wget_rt -eq 0 ] ; then
     wget -O /tmp/bootstrap-salt.sh https://bootstrap.saltstack.com
     if [ $? -eq 0 ]; then
       success=1
     fi
   fi
 
-  if [ ! $success ]; then
+  if [ $success -eq 0 ]; then
     oecho "Error: Unable to download salt bootstrap, please check network"
     oecho "connectivity to https://bootstrap.saltstack.com"
     exit 1
