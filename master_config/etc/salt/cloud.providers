@@ -1,0 +1,4 @@
+my-saltify-config:
+  minion:
+    master: 10.211.55.3
+  driver: saltify

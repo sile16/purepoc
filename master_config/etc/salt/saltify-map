@@ -1,0 +1,21 @@
+#make_salty:
+#  - myinstance:
+#    ssh_host: 54.262.11.38
+#    ssh_username: ubuntu
+#    password: 'asdfasdf'
+# sudo: True
+
+make_salty:
+  - node01:
+      ssh_host: 10.211.55.7
+      ssh_username: sile
+      password: 'kiss16123!'
+      provider: my-saltify-config
+      driver: saltify
+      sudo: True
+  - node04:
+      ssh_host: 10.211.55.9
+      ssh_username: root
+      password: 'kiss16123!'
+      driver: saltify
+      provider: my-saltify-config

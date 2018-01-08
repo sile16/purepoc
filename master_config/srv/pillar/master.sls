@@ -1,0 +1,5 @@
+nfs:
+  server:
+    exports:
+      /purepoc: "*"
+      

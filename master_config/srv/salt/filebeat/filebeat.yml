@@ -1,0 +1,19 @@
+filebeat.prospectors:
+- type: log
+  enabled: true
+  paths:
+    - /purepoc/logs/test_log
+  json.message_key: timestamp
+  json.keys_under_root: true
+  tags: ["POC"]
+
+
+output.elasticsearch:
+  hosts: ["{{ pillar['master_ip']}}:9200"]
+  template.name: filebeat
+  template.path: filebeat.template.json
+
+
+setup.kibana:
+  host: "{{ pillar['master_ip']}}:5601"
+

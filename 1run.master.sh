@@ -16,7 +16,7 @@ if [ ! -L "/purepoc" ]; then
     sudo ln -s `pwd` /purepoc
 fi
 
-#replace slat config files with ours
+#replace salt config files with ours
 
 
 if [ ! -L "/etc/salt" ] ; then
@@ -33,8 +33,11 @@ fi
 oecho "Starting Salt Deamons"
 sudo service salt-master start
 sudo service salt-minion start
-oecho "You can now run salt commands as root"
 
+oecho 'Applying salt config to master, this make take a minute'
+sudo salt 'master' state.highstate
+
+oecho "You can now run salt commands as root"
 
 #old docker way:
 #docker run --privileged -h purepoc --rm -v /purepoc:/purepoc -p 4505:4505 -p 4506:4506 -it purepoc

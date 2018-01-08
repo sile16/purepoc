@@ -1,0 +1,34 @@
+ID  Flagged  Code  Severity  State   Created                  Last Seen                Subject
+26  True     1004  warning   closed  2017-12-22 16:43:23 GMT  2017-12-22 17:16:59 GMT  Ethernet connector CH1.FM1.ETH1 is unhealthy
+27  True     1004  warning   closed  2017-12-22 16:43:23 GMT  2017-12-22 17:16:59 GMT  Ethernet connector CH1.FM1.ETH2 is unhealthy
+28  True     1006  info      closed  2017-12-22 16:44:04 GMT  2017-12-22 16:58:55 GMT  NFS service is unhealthy
+29  True     1000  warning   closed  2017-12-22 17:10:40 GMT  2017-12-22 17:31:03 GMT  Blade 1 is unhealthy
+30  True     1000  warning   closed  2017-12-22 17:10:55 GMT  2017-12-22 17:12:58 GMT  Blade 6 is unhealthy
+31  True     1000  warning   closed  2017-12-22 17:12:58 GMT  2017-12-22 17:12:58 GMT  Blade 3 is unhealthy
+32  True     1000  warning   closed  2017-12-22 17:12:58 GMT  2017-12-22 17:12:58 GMT  Blade 4 is unhealthy
+33  True     1000  warning   closed  2017-12-22 17:12:58 GMT  2017-12-22 17:12:58 GMT  Blade 5 is unhealthy
+34  True     1000  warning   closed  2017-12-22 17:12:58 GMT  2017-12-22 17:12:58 GMT  Blade 7 is unhealthy
+35  True     1004  warning   closed  2017-12-22 17:25:55 GMT  2018-01-03 10:53:41 GMT  Ethernet connector CH1.FM2.ETH3 is unhealthy
+36  True     1004  warning   closed  2017-12-22 17:25:55 GMT  2018-01-03 10:53:41 GMT  Ethernet connector CH1.FM2.ETH2 is unhealthy
+37  True     1004  warning   closed  2017-12-22 17:25:55 GMT  2018-01-03 10:53:41 GMT  Ethernet connector CH1.FM2.ETH1 is unhealthy
+38  True     1000  warning   closed  2017-12-22 17:29:02 GMT  2017-12-22 17:31:03 GMT  Blade 2 is unhealthy
+39  True     1002  critical  closed  2017-12-22 17:32:57 GMT  2017-12-22 17:34:58 GMT  Fabric Module 2 requires attention
+40  True     1000  warning   closed  2017-12-29 08:03:46 GMT  2017-12-29 08:03:46 GMT  Blade 1 is unhealthy
+41  True     1000  warning   closed  2017-12-29 08:03:46 GMT  2017-12-29 08:03:46 GMT  Blade 2 is unhealthy
+42  True     1000  warning   closed  2017-12-29 08:03:46 GMT  2017-12-29 08:03:46 GMT  Blade 3 is unhealthy
+43  True     1000  warning   closed  2017-12-29 08:03:46 GMT  2017-12-29 08:03:46 GMT  Blade 4 is unhealthy
+44  True     1000  warning   closed  2017-12-29 08:03:46 GMT  2017-12-29 08:03:46 GMT  Blade 5 is unhealthy
+45  True     1000  warning   closed  2017-12-29 08:03:46 GMT  2017-12-29 08:03:46 GMT  Blade 6 is unhealthy
+46  True     1000  warning   closed  2017-12-29 08:03:46 GMT  2017-12-29 08:03:46 GMT  Blade 7 is unhealthy
+47  True     1002  critical  closed  2018-01-03 08:14:36 GMT  2018-01-03 10:53:39 GMT  Fabric Module 2 requires attention
+48  True     1005  warning   closed  2018-01-03 08:19:02 GMT  2018-01-03 08:19:02 GMT  Ethernet connector CH1.FM2.ETH2 removed
+49  True     1005  warning   closed  2018-01-03 08:19:02 GMT  2018-01-03 08:19:02 GMT  Ethernet connector CH1.FM2.ETH1 removed
+50  True     1000  critical  closed  2018-01-03 08:36:24 GMT  2018-01-03 13:07:51 GMT  Blade 1 requires attention
+51  True     1000  warning   closed  2018-01-03 08:36:24 GMT  2018-01-04 08:11:22 GMT  Blade 2 is unhealthy
+52  True     1000  warning   closed  2018-01-03 08:36:24 GMT  2018-01-04 08:11:22 GMT  Blade 3 is unhealthy
+53  True     1000  warning   closed  2018-01-03 08:36:24 GMT  2018-01-04 08:11:22 GMT  Blade 4 is unhealthy
+54  True     1000  warning   closed  2018-01-03 08:36:24 GMT  2018-01-04 08:11:22 GMT  Blade 5 is unhealthy
+55  True     1000  warning   closed  2018-01-03 08:36:24 GMT  2018-01-04 08:11:22 GMT  Blade 6 is unhealthy
+56  True     1000  warning   closed  2018-01-03 08:36:24 GMT  2018-01-04 08:11:22 GMT  Blade 7 is unhealthy
+57  True     1002  warning   closed  2018-01-03 08:36:29 GMT  2018-01-03 08:36:29 GMT  Fabric Module 1 is unhealthy
+

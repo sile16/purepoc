@@ -2,7 +2,19 @@ base:        # Mandatory name of the base env, ignore it for now
 #  '*':       # All minions targeted get the following sls files
 #    - base # Name of the sls file minus the extension
   'master':
-    - molten.full
+    - master
+    - nfs.server
+
+  'node*':
+    - nodes
+    - nfs.client
+
+  '*':
+    - common
+    - metricbeat
+    - openssh
+
+
 
 #  'node*':
 #    - nfs.client
