@@ -1,1 +1,0 @@
-dd if=/mnt/test_fs/$fs/$my_ip/$x of=/dev/null bs=1M count=10000 &
