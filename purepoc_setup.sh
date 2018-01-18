@@ -51,7 +51,7 @@ setenforce 0
 
                   
 oecho "Installing required packages"
-for x in git wget epel-release yum-utils ansible pyOpenSSL python-cryptography python-lxml; do
+for x in git wget epel-release yum-utils ansible pyOpenSSL python-lxml; do
   install_pkg $x
 done
 
