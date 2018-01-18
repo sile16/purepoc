@@ -18,5 +18,9 @@ Tool to help with the challenge of running POC tests that span many hosts for cu
  
  curl -L -s https://github.com/sile16/purepoc/raw/master/purepoc_setup.sh | sh
  
+ Then go to /purepoc/purepoc to start using the CLI tools and
+ Http://127.0.0.1 to see a web interface.
+ 
+ 
  
  
