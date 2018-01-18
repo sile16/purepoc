@@ -46,8 +46,8 @@ service iptables stop >> $LOG 2>&1
 service firewalld stop >> $LOG 2>&1
 systemctl disable firewalld >> $LOG 2>&1
 chkconfig iptable off >> $LOG 2>&1
-sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config 2>&1
-setenforce 0 2>&1
+sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config >> $LOG 2>&1
+setenforce 0 >> $LOG 2>&1
 
                   
 oecho "Installing required packages"
@@ -56,8 +56,8 @@ for x in git wget epel-release yum-utils ansible pyOpenSSL python-lxml; do
 done
 
 oecho "Docker: Removing old"
-yum remove -y docker docker-common docker-selinux docker-engine 2>&1
-yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+yum remove -y docker docker-common docker-selinux docker-engine >> $LOG 2>&1
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo >> $LOG 2>&1
 oecho "Docker: Installing"
 install_pkg docker-io
 
@@ -71,11 +71,11 @@ done
 
 ###### pulling from github
 if [ ! -d /purepoc/openshift-ansible ]; then
-  oecho "Pulling repo"
+  oecho "Pulling repos"
   mkdir -p /purepoc >> $LOG 2>&1
   cd /purepoc
-  git clone https://github.com/openshift/openshift-ansible.git
-  git clone https://github.com/sile16/purepoc.git
+  git clone https://github.com/openshift/openshift-ansible.git >> $LOG 2>&1
+  git clone https://github.com/sile16/purepoc.git >> $LOG 2>&1
 fi
 
 
