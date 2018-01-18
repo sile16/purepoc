@@ -80,7 +80,9 @@ echo "127.0.0.1" >> /etc/ansible/hosts
 
 if [ ! -f ~/.ssh/id_rsa.pub ]; then
 	oecho "No local public key found, creating a new one"
-	ssh-keygen -t rsa >> $LOG 2>&1 
+	ssh-keygen -t rsa -N '' -f /root/.ssh/id_rsa.pub >> $LOG 2>&1
+	cp /root/.ssh/id_rsa.pub /root/.ssh/authorized_keys
+	ssh -o StrictHostKeyChecking=no root@127.0.0.1 echo 
 fi
 
 
