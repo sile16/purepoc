@@ -42,10 +42,8 @@ install_pkg () {
 }
 
 oecho "Disable firewall & SE Linux"
-service iptables stop >> $LOG 2>&1
 service firewalld stop >> $LOG 2>&1
 systemctl disable firewalld >> $LOG 2>&1
-chkconfig iptable off >> $LOG 2>&1
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config >> $LOG 2>&1
 setenforce 0 >> $LOG 2>&1
 
@@ -83,6 +81,8 @@ fi
 ###### this doens't work
 [[ ":$PATH:" != *":/purepoc/purepoc:"* ]] && PATH="/purepoc/purepoc:${PATH}"
 
+oecho "Installing pureelk"
+curl -s https://raw.githubusercontent.com/sile16/pureelk/master/pureelk.sh | sudo bash -s install
 
 
 
