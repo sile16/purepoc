@@ -16,5 +16,7 @@ Tool to help with the challenge of running POC tests that span many hosts for cu
  
  On your master get started with:
  
+ curl -s https://github.com/sile16/purepoc/raw/master/purepoc_setup.sh | sh
+ 
  
  
