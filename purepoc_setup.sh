@@ -49,13 +49,12 @@ setenforce 0 >> $LOG 2>&1
 
                   
 oecho "Installing required packages"
-for x in git wget epel-release yum-utils ansible pyOpenSSL python-lxml; do
+for x in git wget nano epel-release yum-utils ansible pyOpenSSL python-lxml; do
   install_pkg $x
 done
 
 oecho "Docker: Removing old"
 yum remove -y docker docker-common docker-selinux docker-engine >> $LOG 2>&1
-yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo >> $LOG 2>&1
 oecho "Docker: Installing"
 install_pkg docker-io
 
@@ -76,10 +75,14 @@ if [ ! -d /purepoc/openshift-ansible ]; then
   git clone https://github.com/sile16/purepoc.git >> $LOG 2>&1
 fi
 
+echo "[master]" > /etc/ansible/hosts
+echo "127.0.0.1" >> /etc/ansible/hosts
 
-###### adding scripts to path
-###### this doens't work
-[[ ":$PATH:" != *":/purepoc/purepoc:"* ]] && PATH="/purepoc/purepoc:${PATH}"
+if [ ! -f ~/.ssh/id_rsa.pub ]; then
+	oecho "No local public key found, creating a new one"
+	ssh-keygen -t rsa >> $LOG 2>&1 
+fi
+
 
 oecho "Installing pureelk"
 curl -s https://raw.githubusercontent.com/sile16/pureelk/master/pureelk.sh | sudo bash -s install
