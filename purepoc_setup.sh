@@ -34,7 +34,7 @@ error() {
 install_pkg () {
   if [ `rpm -q $1>/dev/null; echo $?` !=  "0" ]; then
     oecho "Installing $1 via yum"
-    yum install -y $1 >> $LOG
+    yum install -y $1 >> $LOG 2>&1
     if [ $? -ne 0 ]; then
       error "Failed installing $1"
     fi
@@ -42,12 +42,12 @@ install_pkg () {
 }
 
 oecho "Disable firewall & SE Linux"
-service iptables stop >> $LOG
-service firewalld stop >> $LOG
-systemctl disable firewalld >> $LOG
-chkconfig iptable off >> $LOG
-sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
-setenforce 0
+service iptables stop >> $LOG 2>&1
+service firewalld stop >> $LOG 2>&1
+systemctl disable firewalld >> $LOG 2>&1
+chkconfig iptable off >> $LOG 2>&1
+sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config 2>&1
+setenforce 0 2>&1
 
                   
 oecho "Installing required packages"
@@ -56,7 +56,7 @@ for x in git wget epel-release yum-utils ansible pyOpenSSL python-lxml; do
 done
 
 oecho "Docker: Removing old"
-yum remove -y docker docker-common docker-selinux docker-engine
+yum remove -y docker docker-common docker-selinux docker-engine 2>&1
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 oecho "Docker: Installing"
 install_pkg docker-io
@@ -64,15 +64,15 @@ install_pkg docker-io
 oecho "Starting services:"
 for x in "docker"; do
   oecho "Starting $1"
-  sudo chkconfig $x on
-  service $x start
+  sudo chkconfig $x on >> $LOG 2>&1
+  service $x start >> $LOG 2>&1
 done
 
 
 ###### pulling from github
 if [ ! -d /purepoc/openshift-ansible ]; then
   oecho "Pulling repo"
-  mkdir -p /purepoc
+  mkdir -p /purepoc >> $LOG 2>&1
   cd /purepoc
   git clone https://github.com/openshift/openshift-ansible.git
   git clone https://github.com/sile16/purepoc.git
