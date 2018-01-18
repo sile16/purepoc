@@ -32,7 +32,6 @@ error() {
 }
 
 install_pkg () {
-  oecho "Installing $1"
   if [ `rpm -q $1>/dev/null; echo $?` !=  "0" ]; then
     oecho "Installing $1 via yum"
     yum install -y $1 >> $LOG
@@ -42,16 +41,31 @@ install_pkg () {
   fi
 }
 
+oecho "Disable firewall & SE Linux"
+service iptables stop >> $LOG
+service firewalld stop >> $LOG
+systemctl disable firewalld >> $LOG
+chkconfig iptable off >> $LOG
+sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
+setenforce 0
+
+                  
 oecho "Installing required packages"
-for x in git docker ansible pyOpenSSL python-cryptography python-lxml; do
+for x in git wget epel-release yum-utils ansible pyOpenSSL python-cryptography python-lxml; do
   install_pkg $x
 done
 
-oecho "Starting services"
+oecho "Docker: Removing old"
+yum remove -y docker docker-common docker-selinux docker-engine
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+oecho "Docker: Installing"
+install_pkg docker-io
+
+oecho "Starting services:"
 for x in "docker"; do
   oecho "Starting $1"
-  systemctl enable $x
-  systemctl start $x
+  sudo chkconfig $x on
+  service $x start
 done
 
 
@@ -66,6 +80,7 @@ fi
 
 
 ###### adding scripts to path
+###### this doens't work
 [[ ":$PATH:" != *":/purepoc/purepoc:"* ]] && PATH="/purepoc/purepoc:${PATH}"
 
 
