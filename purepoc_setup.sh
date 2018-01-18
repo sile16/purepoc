@@ -85,7 +85,7 @@ fi
 
 
 oecho "Installing pureelk"
-curl -L -s https://raw.githubusercontent.com/sile16/pureelk/master/pureelk.sh | sudo bash -s install
+curl -s https://raw.githubusercontent.com/sile16/pureelk/master/pureelk.sh | sudo bash -s install
 
 
 
