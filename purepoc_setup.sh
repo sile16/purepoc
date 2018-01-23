@@ -49,7 +49,7 @@ setenforce 0 >> $LOG 2>&1
 
                   
 oecho "Installing required packages"
-for x in git wget nano epel-release yum-utils ansible pyOpenSSL python-lxml; do
+for x in git wget nano epel-release yum-utils ansible pyOpenSSL python-lxml pssh sshpass; do
   install_pkg $x
 done
 
